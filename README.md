@@ -13,12 +13,12 @@ Web-crawled datasets have enabled remarkable generalization capabilities in rece
 ### Datasets
 Each folder with a dataset name contains the relevant code to download data instances into WebDataset format given the corresponding metadata:
 
-* YFCC: our 15M subset randomly sampled from YFCC100M could be found [here](https://drive.google.com/file/d/1bakfXSS5Dcbf6JtQ-sNEH-ghqYlNZxmd/view?usp=sharing)
-* LAION: our subset could be found [here](https://drive.google.com/file/d/1m46cdsQLVT2YA3gUy9cnvyu6sBnyqkO4/view?usp=sharing). Note that this contains slightly more than 15M to account for a small fraction of bad URLs and throttled instances during the downloading process
+* YFCC: we used the 15M subset of the YFCC100M dataset that the [original CLIP paper](https://github.com/openai/CLIP/blob/main/data/yfcc100m.md) used for dataset ablation studies. The corresponding metadata can be found [here](https://drive.google.com/file/d/1bakfXSS5Dcbf6JtQ-sNEH-ghqYlNZxmd/view?usp=sharing)
+* LAION: our subset can be found [here](https://drive.google.com/file/d/1m46cdsQLVT2YA3gUy9cnvyu6sBnyqkO4/view?usp=sharing). We only included samples from the original LAION dataset where the 'NSFW' tag is marked as 'UNLIKELY'. Note that this subset contains slightly more than 15M samples to account for a small fraction of bad URLs and throttled instances during the downloading process
 * CC12M: we obtain the training set from the [official data release](https://github.com/google-research-datasets/conceptual-12m)
 * WIT: refer to the [official data release](https://github.com/google-research-datasets/wit/blob/main/DATA.md) for the metadata. Note that for WIT, due to heavy throttling issues, we could not download data in parallel within a single machine. Users may consider using AWS instances to speed up this process
-* RedCaps: the initial [dataset release](https://redcaps.xyz/download) grouped instances into topics with the following format `<subreddit>_<year>.json`. For our paper, we shuffled RedCaps instances across all of these json files before starting the downloading process, in order to randomize the training data (see `shuffle_annotations.py`). The updated json files could be found [here](https://drive.google.com/file/d/1Mbee_boX6Fvw2Ys-pOOWINkIppa6G68X/view?usp=sharing)
-* Shutterstock: the metadata could be found [here](https://drive.google.com/file/d/1mSNAL7u8y39O_fb66f38uLRm1zUnDH9O/view?usp=sharing)
+* RedCaps: the initial [dataset release](https://redcaps.xyz/download) grouped instances into topics with the following format `<subreddit>_<year>.json`. For our paper, we shuffled RedCaps instances across all of these json files before starting the downloading process, in order to randomize the training data (see `shuffle_annotations.py`). The updated json files can be found [here](https://drive.google.com/file/d/1Mbee_boX6Fvw2Ys-pOOWINkIppa6G68X/view?usp=sharing)
+* Shutterstock: the metadata can be found [here](https://drive.google.com/file/d/1mSNAL7u8y39O_fb66f38uLRm1zUnDH9O/view?usp=sharing)
 
 ### Training
 Our paper uses the [OpenCLIP](https://github.com/mlfoundations/open_clip) repository for training CLIP models.
